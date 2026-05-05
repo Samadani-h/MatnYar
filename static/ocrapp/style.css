@@ -1,0 +1,143 @@
+/* فونت و راست‌چین */
+body {
+  direction: rtl;
+  font-family: 'Tahoma', sans-serif;
+  background-color: #fff;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #1f1f1f;
+  color: #ddd;
+}
+
+/* کانتینر اصلی */
+.container {
+  width: 90%;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.08);
+}
+
+body.dark-mode .container {
+  background-color: #2e2e2e;
+}
+
+/* فرم */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+input[type=file], button {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #2196f3;
+  color: white;
+  cursor: pointer;
+}
+
+/* دکمه دانلود */
+.btn-primary {
+  display: inline-block;
+  background: #28a745;
+  padding: 10px 16px;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.badge {
+  background: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* کارت نتیجه */
+.card {
+  background-color: #fff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.dark-mode .card {
+  background-color: #3a3a3a;
+  border-color: #555;
+}
+
+/* چرخ‌دنده */
+.gear {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../icons/gear.svg") no-repeat center;
+  background-size: contain;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* کلید تاریک/روشن */
+.toggle-switch {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.toggle-switch input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.toggle-switch label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 60px;
+  height: 30px;
+  background: #2e2e2e;
+  display: block;
+  border-radius: 30px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.toggle-switch label:after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 24px;
+  height: 24px;
+  background: #f1c40f;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.toggle-switch input:checked + label {
+  background: #4cd137;
+}
+
+.toggle-switch input:checked + label:after {
+  right: 33px;
+  background: #fff;
+}

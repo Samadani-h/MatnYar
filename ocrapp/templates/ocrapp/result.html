@@ -1,0 +1,14 @@
+{% extends 'ocrapp/base.html' %}
+
+{% block title %}نتیجه تبدیل{% endblock %}
+
+{% block content %}
+<h1>متن استخراج شده:</h1>
+<pre>{{ text }}</pre>
+
+{% if download_link %}
+<a href="{{ download_link }}" class="download-link" download>📥 دانلود فایل Word</a>
+{% endif %}
+
+<a href="{% url 'home' %}">🔙 بازگشت به صفحه اصلی</a>
+{% endblock %}
